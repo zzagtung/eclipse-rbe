@@ -66,7 +66,7 @@ public abstract class ResourceFactory implements IResourceFactory {
     /** Regex to match a properties file. */
     private static final String PROPERTIES_FILE_REGEX = 
             "^(" + TOKEN_BUNDLE_NAME + ")"
-          + "((_[a-z]{2,3})|(_[a-z]{2,3}_[A-Z]{2})"
+          + "((_[a-z]{2,5})|(_[A-Z]{2,5})|(_[a-z]{2,3}_[A-Z]{2})"
           + "|(_[a-z]{2,3}_[A-Z]{2}_\\w*))?(\\."
           + TOKEN_FILE_EXTENSION + ")$";
     
@@ -365,7 +365,7 @@ public abstract class ResourceFactory implements IResourceFactory {
     protected static String getBundleName(IResource file) {
         String name = file.getName();
         String regex = "^(.*?)"
-                + "((_[a-z]{2,3})|(_[a-z]{2,3}_[A-Z]{2})"
+                + "((_[a-z]{2,5})|(_[A-Z]{2,5})|(_[a-z]{2,3}_[A-Z]{2})"
                 + "|(_[a-z]{2,3}_[A-Z]{2}_\\w*))?(\\."
                 + file.getFileExtension() + ")$";
         return name.replaceFirst(regex, "$1");
